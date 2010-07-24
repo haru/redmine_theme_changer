@@ -25,7 +25,7 @@ class ThemeChangerMyAccountHooks < Redmine::Hook::ViewListener
     return '' unless user
     o = ''
     o << '<hr/><p>'
-    o << f.select(:theme, [['System Setting',ThemeChangerUserSetting::SYSTEM_SETTING], 
+    o << f.select(:theme, [[l(:label_use_system_setting),ThemeChangerUserSetting::SYSTEM_SETTING],
         [l(:label_default),ThemeChangerUserSetting::DEFAULT_THEME]] + Redmine::Themes.themes.collect {|t| [t.name, t.id]} ,
       :label => :label_theme)
     o << '</p>'
