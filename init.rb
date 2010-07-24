@@ -23,8 +23,8 @@ require 'theme_changer_themes_patch'
 Redmine::Plugin.register :redmine_theme_changer do
   name 'Redmine Theme Changer plugin'
   author 'Haruyuki Iida'
-  description 'Lets you change a theme for Redmine'
+  description 'Lets each user select a theme for Redmine'
   version '0.0.1'
-  url 'http://example.com/path/to/plugin'
-  author_url 'http://example.com/about'
+  url 'http://www.r-labs.org/projects/themechanger'
+  author_url 'http://twitter.com/haru_iida'
 end
