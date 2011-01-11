@@ -26,6 +26,15 @@ class ThemeChangerUserSetting < ActiveRecord::Base
     ThemeChangerUserSetting.find(:first, :conditions => ['user_id = ?', user_id])
   end
 
+  def self.find_or_create_theme_by_user_id(user_id)
+    theme = find_theme_by_user_id(user_id)
+    unless theme
+      theme = ThemeChangerUserSetting.new
+      theme.user_id = user_id
+    end
+    return theme
+  end
+
   def theme_name
     return '' if theme == DEFAULT_THEME
     theme

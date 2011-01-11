@@ -15,17 +15,17 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-class User < Principal
-  has_one :theme_setting, :dependent => :destroy, :class_name => 'ThemeChangerUserSetting'
-
+class UserPreference < ActiveRecord::Base
+  
   def theme
-    return nil unless self.theme_setting
-    self.theme_setting.theme
+    theme_setting = ThemeChangerUserSetting.find_theme_by_user_id(user.id)
+    return nil unless theme_setting
+    theme_setting.theme
   end
 
   def theme=(name)
-    self.theme_setting = ThemeChangerUserSetting.new unless self.theme_setting
-    self.theme_setting.theme = name
-    self.theme_setting.save!
+    theme_setting = ThemeChangerUserSetting.find_or_create_theme_by_user_id(user.id)
+    theme_setting.theme = name
+    theme_setting.save!
   end
 end

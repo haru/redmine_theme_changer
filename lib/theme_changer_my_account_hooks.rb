@@ -24,10 +24,10 @@ class ThemeChangerMyAccountHooks < Redmine::Hook::ViewListener
     f = context[:form]
     return '' unless user
     o = ''
-    o << '<hr/><p>'
-    o << f.select(:theme, [[l(:label_use_system_setting),ThemeChangerUserSetting::SYSTEM_SETTING],
-        [l(:label_default),ThemeChangerUserSetting::DEFAULT_THEME]] + Redmine::Themes.themes.collect {|t| [t.name, t.id]} ,
-      :label => :label_theme)
+    o << '</div><div class="box tabular"><p>'
+    o << "<label>#{l(:label_theme)}</label>"
+    o << select_tag("pref[theme]", options_for_select([[l(:label_use_system_setting),ThemeChangerUserSetting::SYSTEM_SETTING],
+        [l(:label_default),ThemeChangerUserSetting::DEFAULT_THEME]] + Redmine::Themes.themes.collect {|t| [t.name, t.id]}, user.preference.theme))
     o << '</p>'
     return o
 
