@@ -17,5 +17,9 @@ http://www.r-labs.org/projects/themechanger
 
 This plugin works only on production mode.
 
+=== Language contributors
+
+* de.yml - jensk
+
 
 
