@@ -21,6 +21,7 @@ This plugin works only on production mode.
 
 * fr.yml - Alexis Ulrich
 * de.yml - jensk
+* ko.yml - Ki Won Kim
 
 
 
