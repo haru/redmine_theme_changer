@@ -21,6 +21,6 @@ This plugin works only on production mode.
 
 * fr.yml - Alexis Ulrich
 * de.yml - jensk
-
+* bg.yml - Ivan Cenov
 
 
