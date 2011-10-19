@@ -17,7 +17,7 @@
 
 class ThemeChangerMyAccountHooks < Redmine::Hook::ViewListener
 
-  include ApplicationHelper
+  #include ApplicationHelper
   
   def view_my_account(context = {})
     user = context[:user]

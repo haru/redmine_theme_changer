@@ -1,5 +1,5 @@
 # Theme Changer plugin for Redmine
-# Copyright (C) 2010  Haruyuki Iida
+# Copyright (C) 2010-2011  Haruyuki Iida
 #rev
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -19,6 +19,16 @@ require 'redmine'
 require 'theme_changer_my_account_hooks'
 require 'theme_changer_user_patch'
 require 'theme_changer_themes_patch'
+
+require 'dispatcher'
+Dispatcher.to_prepare :redmine_theme_changer do
+  # Guards against including the module multiple time (like in tests)
+  # and registering multiple callbacks
+  require_dependency 'user_preference'
+  unless UserPreference.included_modules.include? ThemeChangerUserPreferencePatch
+    UserPreference.send(:include, ThemeChangerUserPreferencePatch)
+  end 
+end
 
 Redmine::Plugin.register :redmine_theme_changer do
   name 'Redmine Theme Changer plugin'
