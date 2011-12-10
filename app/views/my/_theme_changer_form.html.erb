@@ -1,5 +1,6 @@
+<%
 # Theme Changer plugin for Redmine
-# Copyright (C) 2010-2011  Haruyuki Iida
+# Copyright (C) 2011  Haruyuki Iida
 #rev
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -14,7 +15,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-%>
 
-class ThemeChangerMyAccountHooks < Redmine::Hook::ViewListener
-  render_on :view_my_account, :partial => 'my/theme_changer_form', :multipart => true
-end
+</div>
+
+<div class="box tabular"><p>
+<label><%=h l(:label_theme) %></label>
+<%=select_tag("pref[theme]", options_for_select([[l(:label_use_system_setting),ThemeChangerUserSetting::SYSTEM_SETTING],
+        [l(:label_default),ThemeChangerUserSetting::DEFAULT_THEME]] + Redmine::Themes.themes.collect {|t| [t.name, t.id]}, user.preference.theme)) %>
+</p>
