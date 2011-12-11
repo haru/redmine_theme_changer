@@ -17,9 +17,9 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 -%>
 
-</div>
 
-<div class="box tabular"><p>
+
+<p>
 <label><%=h l(:label_theme) %></label>
 <%=select_tag("pref[theme]", options_for_select([[l(:label_use_system_setting),ThemeChangerUserSetting::SYSTEM_SETTING],
         [l(:label_default),ThemeChangerUserSetting::DEFAULT_THEME]] + Redmine::Themes.themes.collect {|t| [t.name, t.id]}, user.preference.theme)) %>
