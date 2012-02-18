@@ -34,7 +34,7 @@ Redmine::Plugin.register :redmine_theme_changer do
   name 'Redmine Theme Changer plugin'
   author 'Haruyuki Iida'
   description 'Lets each user select a theme for Redmine'
-  version '0.0.5'
+  version '0.0.6'
   url 'http://www.r-labs.org/projects/themechanger'
   author_url 'http://twitter.com/haru_iida'
   requires_redmine :version_or_higher => '1.3.0'

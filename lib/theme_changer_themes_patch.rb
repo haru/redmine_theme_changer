@@ -17,6 +17,7 @@
 
 #require_dependency 'application_controller'
 require_dependency 'redmine/themes'
+require_dependency 'theme_changer_user_setting'
 
 module ApplicationHelper
   def get_theme
