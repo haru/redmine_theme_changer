@@ -1,5 +1,5 @@
 # Code Review plugin for Redmine
-# Copyright (C) 2009  Haruyuki Iida
+# Copyright (C) 2009-2012  Haruyuki Iida
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -17,7 +17,7 @@
 
 #require_dependency 'application_controller'
 require_dependency 'redmine/themes'
-require_dependency 'theme_changer_user_setting'
+#require_dependency 'theme_changer_user_setting'
 
 module ApplicationHelper
   def get_theme
@@ -26,11 +26,12 @@ module ApplicationHelper
     return Setting.ui_theme if setting.theme == ThemeChangerUserSetting::SYSTEM_SETTING
     return setting.theme_name
   end
-
-  def stylesheet_path(source)
-    @current_theme ||= Redmine::Themes.theme(get_theme)
-    super((@current_theme && @current_theme.stylesheets.include?(source)) ?
-      "/themes/#{@current_theme.dir}/stylesheets/#{source}" : source)
+  
+  def current_theme
+    unless instance_variable_defined?(:@current_theme)
+      @current_theme = Redmine::Themes.theme(get_theme)
+    end
+    @current_theme
   end
 
 end
