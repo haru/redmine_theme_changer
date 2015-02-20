@@ -1,5 +1,5 @@
 # Theme Changer plugin for Redmine
-# Copyright (C) 2010-2012  Haruyuki Iida
+# Copyright (C) 2010-2015  Haruyuki Iida
 #rev
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -33,8 +33,8 @@ Redmine::Plugin.register :redmine_theme_changer do
   name 'Redmine Theme Changer plugin'
   author 'Haruyuki Iida'
   description 'Lets each user select a theme for Redmine'
-  version '0.1.1'
+  version '0.2.0'
   url 'http://www.r-labs.org/projects/themechanger'
   author_url 'http://twitter.com/haru_iida'
-  requires_redmine :version_or_higher => '2.0.0'
+  requires_redmine :version_or_higher => '3.0.0'
 end
