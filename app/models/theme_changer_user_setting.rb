@@ -23,7 +23,7 @@ class ThemeChangerUserSetting < ActiveRecord::Base
   SYSTEM_SETTING = '__system_setting__'
 
   def self.find_theme_by_user_id(user_id)
-    ThemeChangerUserSetting.find(:first, :conditions => ['user_id = ?', user_id])
+    ThemeChangerUserSetting.find_by(user_id: user_id)
   end
 
   def self.find_or_create_theme_by_user_id(user_id)
