@@ -21,14 +21,14 @@ module ThemeChangerUserPreferencePatch
 
     base.class_eval do
       unloadable # Send unloadable so it will not be unloaded in development
-     
+      safe_attributes :theme
     end
 
   end
 end
 
 module UserPreferenceInstanceMethodsForThemeChanger
-  
+
   def theme
     theme_setting = ThemeChangerUserSetting.find_theme_by_user_id(user.id)
     return nil unless theme_setting
