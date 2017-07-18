@@ -20,5 +20,5 @@ http://www.r-labs.org/projects/themechanger
 * ko.yml - Ki Won Kim
 * bg.yml - Ivan Cenov
 * cs.yml - Wohnivec
-
+* pt-BR.yml - Adriano Baptistella
 
