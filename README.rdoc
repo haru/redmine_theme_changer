@@ -21,4 +21,5 @@ http://www.r-labs.org/projects/themechanger
 * bg.yml - Ivan Cenov
 * cs.yml - Wohnivec
 * pt-BR.yml - Adriano Baptistella
+* zy.yml - Steven.W
 
