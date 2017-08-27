@@ -3,7 +3,7 @@ rvm:
 - 2.2
 - 2.3
 env:
-- REDMINE_VER=3.4-stable
+- REDMINE_VER=master
 script:
 - export TESTSPACE=`pwd`/testspace
 - export NAME_OF_PLUGIN=redmine_theme_changer
