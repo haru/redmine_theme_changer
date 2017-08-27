@@ -1,10 +1,11 @@
-require File.dirname(__FILE__) + '/../test_helper'
+require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
 class ThemeChangerUserSettingTest < ActiveSupport::TestCase
-  fixtures :theme_changer_user_settings
+  fixtures :theme_changer_user_settings, :users
 
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+  def test_find_theme_by_user_id
+    setting = ThemeChangerUserSetting.find_theme_by_user_id 1
+    assert_equal(1, setting.user.id)
+    assert_equal('classic', setting.theme)
   end
 end

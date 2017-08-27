@@ -4,16 +4,16 @@ one:
 
   user_id: 1
 
-  theme: MyString
+  theme: classic
 
   updated_at: 2010-07-24 10:05:13
 
 two:
   id: 2
 
-  user_id: 1
+  user_id: 2
 
-  theme: MyString
+  theme: alternate
 
   updated_at: 2010-07-24 10:05:13
 
