@@ -4,10 +4,15 @@ rvm:
 - 2.3
 env:
 - REDMINE_VER=master
-script:
+install:
 - export TESTSPACE=`pwd`/testspace
 - export NAME_OF_PLUGIN=redmine_theme_changer
 - export PATH_TO_PLUGIN=`pwd`
+- export PATH_TO_REDMINE=$TESTSPACE/redmine
+- mkdir $TESTSPACE
+- bash -x ./travis_install.sh
+script:
+- export TESTSPACE=`pwd`/testspace
 - export PATH_TO_REDMINE=$TESTSPACE/redmine
 - mkdir $TESTSPACE
 - bash -x ./travis.sh
