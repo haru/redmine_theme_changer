@@ -2,6 +2,10 @@
 
 set -e
 
+cd `dirname $0`
+. env.sh
+cd ..
+
 cd $PATH_TO_REDMINE
 
 bundle exec rake db:structure:dump

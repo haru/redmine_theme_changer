@@ -2,6 +2,10 @@
 
 set -e
 
+cd `dirname $0`
+. env.sh
+cd ..
+
 if [[ ! "$TESTSPACE" = /* ]] ||
    [[ ! "$PATH_TO_REDMINE" = /* ]] ||
    [[ ! "$REDMINE_VER" = * ]] ||
@@ -20,6 +24,8 @@ then
        "$PATH_TO_PLUGIN"
   exit 1;
 fi
+
+mkdir -p $TESTSPACE
 
 export RAILS_ENV=test
 
