@@ -14,7 +14,6 @@ install:
 script:
 - export TESTSPACE=`pwd`/testspace
 - export PATH_TO_REDMINE=$TESTSPACE/redmine
-- mkdir $TESTSPACE
 - bash -x ./travis.sh
 notifications:
   slack:
