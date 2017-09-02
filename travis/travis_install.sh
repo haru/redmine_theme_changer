@@ -8,26 +8,30 @@ cd ..
 
 if [[ ! "$TESTSPACE" = /* ]] ||
    [[ ! "$PATH_TO_REDMINE" = /* ]] ||
-   [[ ! "$REDMINE_VER" = * ]] ||
-   [[ ! "$NAME_OF_PLUGIN" = * ]] ||
    [[ ! "$PATH_TO_PLUGIN" = /* ]];
 then
   echo "You should set"\
-       " TESTSPACE, PATH_TO_REDMINE, REDMINE_VER"\
-       " NAME_OF_PLUGIN, PATH_TO_PLUGIN"\
+       " TESTSPACE, PATH_TO_REDMINE,"\
+       " PATH_TO_PLUGIN"\
        " environment variables"
   echo "You set:"\
        "$TESTSPACE"\
        "$PATH_TO_REDMINE"\
-       "$REDMINE_VER"\
-       "$NAME_OF_PLUGIN"\
        "$PATH_TO_PLUGIN"
   exit 1;
 fi
 
-mkdir -p $TESTSPACE
+if [ "$REDMINE_VER" = "" ]
+then
+  export REDMINE_VER=master
+fi
 
-export RAILS_ENV=test
+if [ "$NAME_OF_PLUGIN" == "" ]
+then
+  export NAME_OF_PLUGIN=`basename $PATH_TO_PLUGIN`
+fi
+
+mkdir -p $TESTSPACE
 
 export REDMINE_GIT_REPO=git://github.com/redmine/redmine.git
 export REDMINE_GIT_TAG=$REDMINE_VER
