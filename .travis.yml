@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+- 2.2
+- 2.3
+env:
+- REDMINE_VER=3.4-stable
+script:
+- export TESTSPACE=`pwd`/testspace
+- export NAME_OF_PLUGIN=redmine_theme_changer
+- export PATH_TO_PLUGIN=`pwd`
+- export PATH_TO_REDMINE=$TESTSPACE/redmine
+- mkdir $TESTSPACE
+- bash -x ./travis.sh
+notifications:
+  slack:
+    secure: jSLfRVOZWn/hrwNKInpMKdkEaD7VuOF0tn893qCEzSwLfv2BWItJFSSLgNzug8uHcqo2DCngKzhqeNCqdiaF8i7sMybGAzvmm8HpS2iKM/EFyKNKc34r/IyaEcKabblEg66JREoz4Ovy4csQJN/r4lngis4xqZx77hMZMb8WOLRCN+2lkoQJxESTlb+4HWwx6vMZIjvKywgXhh/pqxbq4sRGseNhN3RXc4j2b4b73IkKMzy9my2vReXnh4cEDvDeG0afspOb/b3qe12iVYVGInAH1Nq5/HF4+HcJwQUohWPQUXMcgvnwgW4YG1flaVp6XXleB9XuSSJZIwOUtEMbTA9akRMfujMBtldlOhEw+hBC+iyIs7vz+F2nvAbTy5gja0Kip9Ve2Zs3PsiyeUS3KMC0DvoTdyU7qyiiAN3Djlb9HRUTBg0YSWmjC4aPBMB1mk6+Hot8efRrfQR1+fTNrhVNlndzLG5NzRCkzk2tlpqbUrKMzc1eHavPJF9uFqcTNXazUIlfYq7AK3jRa+VqaenIIy1gAxFPCNq6FWQF2D6H5lsauazGkcIGant4Lj5dSWlgsOgvuWKbQ6PMe1Xd3yjkL5XR5ygvppHocQebDYJ6l4+tvFj3Rzg8j0oxy3Vmo5u2byxM/IbGLCZcLIsFNpxCqMp+SwhKkNKU2g4+x2E=

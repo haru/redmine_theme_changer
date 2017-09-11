@@ -22,4 +22,5 @@ http://www.r-labs.org/projects/themechanger
 * cs.yml - Wohnivec
 * pt-BR.yml - Adriano Baptistella
 * zy.yml - Steven.W
+* ru.yml - Danil intl
 
