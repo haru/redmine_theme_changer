@@ -1,6 +1,6 @@
 # Theme Changer plugin for Redmine
-# Copyright (C) 2010  Haruyuki Iida
-#rev
+# Copyright (C) 2010-2017  Haruyuki Iida
+#
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
 # as published by the Free Software Foundation; either version 2
@@ -32,7 +32,7 @@ class ThemeChangerUserSetting < ActiveRecord::Base
       theme = ThemeChangerUserSetting.new
       theme.user_id = user_id
     end
-    return theme
+    theme
   end
 
   def theme_name
