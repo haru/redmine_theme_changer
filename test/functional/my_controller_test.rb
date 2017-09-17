@@ -25,9 +25,28 @@ class MyControllerTest < Redmine::ControllerTest
     @request.session[:user_id] = 2
   end
 
-  def test_my_account_should_show_editable_custom_fields
+  def test_my_account
     get :account
     assert_response :success
-    assert_select 'input[name=?]', 'user[custom_field_values][4]'
+    assert_select 'select[name=?]', 'pref[theme]'
+  end
+
+  def test_update_account
+    post :account, params: {
+        user: {
+          firstname: "Joe",
+          login: "root",
+          admin: 1,
+          group_ids: ['10'],
+        },
+        pref: {
+          theme: 'alternate'
+        }
+      }
+
+    assert_redirected_to '/my/account'
+    user = User.find(2)
+    assert_equal "Joe", user.firstname
+    assert_equal 'alternate', user.preference.theme
   end
 end
