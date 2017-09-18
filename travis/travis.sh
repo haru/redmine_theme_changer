@@ -6,6 +6,11 @@ cd `dirname $0`
 . env.sh
 cd ..
 
+if [ "$NAME_OF_PLUGIN" == "" ]
+then
+  export NAME_OF_PLUGIN=`basename $PATH_TO_PLUGIN`
+fi
+
 cd $PATH_TO_REDMINE
 
 bundle exec rake db:structure:dump
