@@ -1,0 +1,3 @@
+# Turkish strings for Rails i18n
+tr:
+  label_use_system_setting: "Sistem ayarlarını kullan"
