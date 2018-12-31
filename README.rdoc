@@ -1,3 +1,6 @@
+{<img src="https://travis-ci.org/haru/redmine_theme_changer.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/haru/redmine_theme_changer]
+{<img src="https://coveralls.io/repos/github/haru/redmine_theme_changer/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/haru/redmine_theme_changer?branch=master]
+
 = Redmine Theme Changer Plugin
 
 This is a plugin for Redmine which lets each user select theme of Redmine from account menu.
@@ -23,4 +26,5 @@ http://www.r-labs.org/projects/themechanger
 * pt-BR.yml - Adriano Baptistella
 * zy.yml - Steven.W
 * ru.yml - Danil intl
+* tr.yml - Adnan
 
