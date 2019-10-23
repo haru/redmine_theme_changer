@@ -20,7 +20,6 @@ module ThemeChangerUserPreferencePatch
     base.send(:include, UserPreferenceInstanceMethodsForThemeChanger)
 
     base.class_eval do
-      unloadable # Send unloadable so it will not be unloaded in development
       safe_attributes :theme
     end
 

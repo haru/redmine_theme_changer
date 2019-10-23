@@ -16,11 +16,22 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 require 'redmine'
-require 'theme_changer_my_account_hooks'
-require 'theme_changer_user_patch'
-require 'theme_changer_themes_patch'
+
+Redmine::Plugin.register :redmine_theme_changer do
+  name 'Redmine Theme Changer plugin'
+  author 'Haruyuki Iida'
+  description 'Lets each user select a theme for Redmine'
+  version '0.4.1'
+  url 'http://www.redmine.org/plugins/redmine_theme_changer'
+  author_url 'http://twitter.com/haru_iida'
+  requires_redmine :version_or_higher => '4.0.0'
+end
 
 Rails.configuration.to_prepare do
+  require_dependency 'theme_changer_my_account_hooks'
+  require_dependency 'theme_changer_user_patch'
+  require_dependency 'theme_changer_themes_patch'
+
   # Guards against including the module multiple time (like in tests)
   # and registering multiple callbacks
   require_dependency 'user_preference'
@@ -29,12 +40,3 @@ Rails.configuration.to_prepare do
   end
 end
 
-Redmine::Plugin.register :redmine_theme_changer do
-  name 'Redmine Theme Changer plugin'
-  author 'Haruyuki Iida'
-  description 'Lets each user select a theme for Redmine'
-  version '0.4.0'
-  url 'http://www.redmine.org/plugins/redmine_theme_changer'
-  author_url 'http://twitter.com/haru_iida'
-  requires_redmine :version_or_higher => '4.0.0'
-end
