@@ -25,9 +25,7 @@ Rails.configuration.to_prepare do
   # Guards against including the module multiple time (like in tests)
   # and registering multiple callbacks
   require_dependency 'user_preference'
-  unless UserPreference.included_modules.include? ThemeChangerUserPreferencePatch
-    UserPreference.send(:include, ThemeChangerUserPreferencePatch)
-  end
+  UserPreference.send(:prepend, ThemeChangerUserPreferencePatch)
 end
 
 Redmine::Plugin.register :redmine_theme_changer do
