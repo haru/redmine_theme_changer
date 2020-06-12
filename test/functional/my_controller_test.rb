@@ -1,5 +1,5 @@
 # Theme Changer plugin for Redmine
-# Copyright (C) 2017  Haruyuki Iida
+# Copyright (C) 2017-2020  Haruyuki Iida
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -19,9 +19,11 @@ require File.expand_path(File.dirname(__FILE__) + '/../test_helper')
 
 class MyControllerTest < Redmine::ControllerTest
   fixtures :users, :email_addresses, :user_preferences, :roles, :projects, :members, :member_roles,
-    :issues, :issue_statuses, :trackers, :enumerations, :custom_fields, :auth_sources, :queries
+    :issues, :issue_statuses, :trackers, :enumerations, :custom_fields, :auth_sources, :queries, :enabled_modules,
+    :journals
 
   def setup
+    User.current = nil
     @request.session[:user_id] = 2
   end
 
@@ -32,7 +34,7 @@ class MyControllerTest < Redmine::ControllerTest
   end
 
   def test_update_account
-    post :account, params: {
+    put :account, params: {
         user: {
           firstname: "Joe",
           login: "root",
