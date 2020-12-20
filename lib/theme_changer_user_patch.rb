@@ -16,11 +16,10 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module ThemeChangerUserPreferencePatch
-  def self.included(base) # :nodoc:
-    base.send(:include, UserPreferenceInstanceMethodsForThemeChanger)
+  def self.prepended(base) # :nodoc:
+    base.send(:prepend, UserPreferenceInstanceMethodsForThemeChanger)
 
     base.class_eval do
-      unloadable # Send unloadable so it will not be unloaded in development
       safe_attributes :theme
     end
 
