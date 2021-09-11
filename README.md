@@ -1,6 +1,6 @@
 [![build](https://github.com/haru/redmine_theme_changer/actions/workflows/build.yml/badge.svg)](https://github.com/haru/redmine_theme_changer/actions/workflows/build.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/dfb7a19b63de2a367cc8/maintainability)](https://codeclimate.com/github/haru/redmine_theme_changer/maintainability)
-[![Coverage Status](https://coveralls.io/repos/github/haru/redmine_theme_changer/badge.svg)](https://coveralls.io/github/haru/redmine_theme_changer)
+[![codecov](https://codecov.io/gh/haru/redmine_theme_changer/branch/develop/graph/badge.svg?token=CFSALMKJJY)](https://codecov.io/gh/haru/redmine_theme_changer)
 
 # Redmine Theme Changer Plugin
 

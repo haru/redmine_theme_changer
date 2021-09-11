@@ -10,7 +10,8 @@ end
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::RcovFormatter,
-  SimpleCov::Formatter::LcovFormatter
+  SimpleCov::Formatter::LcovFormatter,
+  SimpleCov::Formatter::HTMLFormatter
   # Coveralls::SimpleCov::Formatter
 ]
 
