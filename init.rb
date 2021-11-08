@@ -19,6 +19,7 @@ require 'redmine'
 require 'theme_changer_my_account_hooks'
 require 'theme_changer_user_patch'
 require 'theme_changer_themes_patch'
+require 'theme_changer_setting_patch'
 
 Rails.configuration.to_prepare do
   # Guards against including the module multiple time (like in tests)
