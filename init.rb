@@ -15,19 +15,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
+$LOAD_PATH.unshift "#{File.dirname(__FILE__)}/lib"
 require 'redmine'
 require 'theme_changer_my_account_hooks'
-require 'theme_changer_user_patch'
+require 'theme_changer_user_preference_patch'
 require 'theme_changer_themes_patch'
-
-Rails.configuration.to_prepare do
-  # Guards against including the module multiple time (like in tests)
-  # and registering multiple callbacks
-  require_dependency 'user_preference'
-  unless UserPreference.included_modules.include? ThemeChangerUserPreferencePatch
-    UserPreference.send(:include, ThemeChangerUserPreferencePatch)
-  end
-end
 
 Redmine::Plugin.register :redmine_theme_changer do
   name 'Redmine Theme Changer plugin'
