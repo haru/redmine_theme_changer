@@ -19,7 +19,7 @@
 require_dependency 'redmine/themes'
 #require_dependency 'theme_changer_user_setting'
 
-module ApplicationHelper
+module ThemeChangerThemesPatch
   def get_theme
     setting = ThemeChangerUserSetting.find_theme_by_user_id(User.current.id)
     return Setting.ui_theme unless setting
@@ -35,3 +35,5 @@ module ApplicationHelper
   end
 
 end
+
+ApplicationHelper.prepend(ThemeChangerThemesPatch)

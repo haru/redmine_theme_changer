@@ -2,5 +2,5 @@ source :rubygems
 
 group :test do
   gem "simplecov-rcov"
-  gem 'coveralls', :require => false
+  gem "simplecov-lcov"
 end

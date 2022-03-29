@@ -4,6 +4,7 @@ set -e
 
 cd `dirname $0`
 . env.sh
+SCRIPTDIR=$(pwd)
 cd ..
 
 if [[ ! "$TESTSPACE" = /* ]] ||
@@ -33,7 +34,7 @@ fi
 
 mkdir -p $TESTSPACE
 
-export REDMINE_GIT_REPO=git://github.com/redmine/redmine.git
+export REDMINE_GIT_REPO=https://github.com/redmine/redmine.git
 export REDMINE_GIT_TAG=$REDMINE_VER
 export BUNDLE_GEMFILE=$PATH_TO_REDMINE/Gemfile
 
@@ -59,17 +60,15 @@ fi
 ln -sf $PATH_TO_PLUGIN plugins/$NAME_OF_PLUGIN
 
 
-cat << EOS > config/database.yml
-test:
-  adapter: sqlite3
-  database: db/test.sqlite3
-EOS
+cp "$SCRIPTDIR/database.yml" config/database.yml
+
 
 
 # install gems
 bundle install
 
 # run redmine database migrations
+bundle exec rake db:create
 bundle exec rake db:migrate
 
 # run plugin database migrations

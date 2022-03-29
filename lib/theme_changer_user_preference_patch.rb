@@ -16,19 +16,6 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module ThemeChangerUserPreferencePatch
-  def self.included(base) # :nodoc:
-    base.send(:include, UserPreferenceInstanceMethodsForThemeChanger)
-
-    base.class_eval do
-      unloadable # Send unloadable so it will not be unloaded in development
-      safe_attributes :theme
-    end
-
-  end
-end
-
-module UserPreferenceInstanceMethodsForThemeChanger
-
   def theme
     theme_setting = ThemeChangerUserSetting.find_theme_by_user_id(user.id)
     return nil unless theme_setting
@@ -41,3 +28,6 @@ module UserPreferenceInstanceMethodsForThemeChanger
     theme_setting.save!
   end
 end
+
+UserPreference.prepend(ThemeChangerUserPreferencePatch)
+UserPreference.send(:safe_attributes, 'theme')
