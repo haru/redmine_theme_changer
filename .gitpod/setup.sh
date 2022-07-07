@@ -24,6 +24,7 @@ if [ ! -d redmine ]; then
     ln -s "$GITPODDIR"/launch.json .
     echo "gem 'ruby-debug-ide'" >> "$REDMINEDIR"/Gemfile
     echo "gem 'debase'" >> "$REDMINEDIR"/Gemfile
+    sed -i 's/^end$/  config.hosts.clear\nend/' "$REDMINEDIR"/config/environments/development.rb
 fi
 
 
