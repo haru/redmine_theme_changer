@@ -33,8 +33,8 @@ WORKDIR /usr/local/redmine
 COPY .devcontainer/database.yml /usr/local/redmine/config/database.yml
 
 RUN rm -rf .git
-RUN echo "gem 'ruby-debug-ide'" >> Gemfile
-RUN echo "gem 'debase'" >> Gemfile
+# RUN echo "gem 'ruby-debug-ide'" >> Gemfile
+RUN echo "gem 'debug'" >> Gemfile
 RUN echo "gem 'rufo'" >> Gemfile
 ENV DB=sqlite3
 RUN bundle install
