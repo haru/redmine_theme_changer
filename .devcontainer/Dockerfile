@@ -24,7 +24,7 @@ RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSI
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
 
 RUN apt-get update
-RUN apt-get install -y imagemagick
+RUN apt-get install -y imagemagick git-flow
 
 WORKDIR /usr/local
 ARG REDMINE_VERSION=master
@@ -33,8 +33,8 @@ WORKDIR /usr/local/redmine
 COPY .devcontainer/database.yml /usr/local/redmine/config/database.yml
 
 RUN rm -rf .git
-RUN echo "gem 'ruby-debug-ide'" >> Gemfile
-RUN echo "gem 'debase'" >> Gemfile
+# RUN echo "gem 'ruby-debug-ide'" >> Gemfile
+RUN echo "gem 'debug'" >> Gemfile
 RUN echo "gem 'rufo'" >> Gemfile
 ENV DB=sqlite3
 RUN bundle install

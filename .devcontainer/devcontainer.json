@@ -45,7 +45,10 @@
 		"hridoy.rails-snippets",
 		"misogi.ruby-rubocop",
 		"jnbt.vscode-rufo",
-		"donjayamanne.git-extension-pack"
+		"donjayamanne.git-extension-pack",
+		"ms-azuretools.vscode-docker",
+		"KoichiSasada.vscode-rdbg",
+		"Serhioromano.vscode-gitflow"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
