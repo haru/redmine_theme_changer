@@ -1,6 +1,7 @@
 #!/bin/sh
 cd /usr/local/redmine
 
+ln -s /workspaces/redmine_theme_changer plugins/redmine_theme_changer
 cp plugins/redmine_theme_changer/Gemfile_for_test plugins/redmine_theme_changer/Gemfile 
 cp plugins/redmine_theme_changer/test/fixtures/theme_changer_user_settings.yml test/fixtures
 bundle install 

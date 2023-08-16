@@ -6,7 +6,8 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	
-	"workspaceFolder": "/usr/local/redmine",
+	// "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/.devcontainer/redmine.code-workspace",
+	// "workspaceFolder": "/workspaces/dev.code-workspace",
     
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 

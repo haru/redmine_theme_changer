@@ -44,3 +44,5 @@ COPY .devcontainer/launch.json /usr/local/redmine/.vscode/launch.json
 RUN chown -R vscode .
 
 COPY .devcontainer/post-create.sh /post-create.sh
+
+WORKDIR /workspaces
