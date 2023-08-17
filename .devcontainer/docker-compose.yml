@@ -15,7 +15,7 @@ services:
         REDMINE_VERSION: "5.0-stable"
 
     volumes:
-      - ..:/usr/local/redmine/plugins/redmine_theme_changer:cached
+      - ..:/workspaces/redmine_theme_changer:cached
       # - ./redmine.code-workspace:/workspaces/redmine.code-workspace
 
     # Overrides default command so things don't shut down after the process ends.
