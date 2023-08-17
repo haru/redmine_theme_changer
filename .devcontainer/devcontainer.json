@@ -6,6 +6,9 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind"
+	],
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	// "workspaceFolder": "/workspaces/dev.code-workspace",
     
