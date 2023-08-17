@@ -46,6 +46,7 @@
             "command": "${workspaceRoot}/bin/rake",
             "script": "redmine:plugins:test",
             "useBundler": true,
+            "cwd": "${workspaceRoot}",
             "args": [
                 "redmine:plugins:test"
             ],
@@ -58,7 +59,9 @@
             "type": "rdbg",
             "request": "launch",
             "command": "${workspaceRoot}/bin/rake",
+            "script": "redmine:plugins:test",
             "useBundler": true,
+            "cwd": "${workspaceRoot}",
             "args": [
                 "redmine:plugins:test"
             ],
@@ -72,7 +75,9 @@
             "type": "rdbg",
             "request": "launch",
             "command": "${workspaceRoot}/bin/rake",
+            "script": "redmine:plugins:test",
             "useBundler": true,
+            "cwd": "${workspaceRoot}",
             "args": [
                 "redmine:plugins:test"
             ],
