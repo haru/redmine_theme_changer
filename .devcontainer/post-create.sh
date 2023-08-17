@@ -1,11 +1,13 @@
 #!/bin/sh
 cd /usr/local/redmine
 
-PLUGIN_NAME=${RepositoryName}
-
 ln -s /workspaces/${PLUGIN_NAME} plugins/${PLUGIN_NAME}
-cp plugins/${PLUGIN_NAME}/Gemfile_for_test plugins/${PLUGIN_NAME}/Gemfile 
-cp plugins/${PLUGIN_NAME}/test/fixtures/theme_changer_user_settings.yml test/fixtures
+if [ -f plugins/${PLUGIN_NAME}/Gemfile_for_test ]
+then
+    cp plugins/${PLUGIN_NAME}/Gemfile_for_test plugins/${PLUGIN_NAME}/Gemfile 
+fi
+cp plugins/${PLUGIN_NAME}/test/fixtures/*.yml test/fixtures
+
 bundle install 
 bundle exec rake redmine:plugins:migrate
 bundle exec rake redmine:plugins:migrate RAILS_ENV=test
