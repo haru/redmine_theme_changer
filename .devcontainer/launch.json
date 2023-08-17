@@ -11,6 +11,8 @@
             "script": "server",
             "useBundler": true,
             "args": [
+                "-b",
+                "0.0.0.0"
             ]
         },
         {
@@ -21,6 +23,8 @@
             "script": "server",
             "useBundler": true,
             "args": [
+                "-b",
+                "0.0.0.0"
             ],
             "env":{
                 "DB": "postgres"
@@ -34,6 +38,8 @@
             "script": "server",
             "useBundler": true,
             "args": [
+                "-b",
+                "0.0.0.0"
             ],
             "env":{
                 "DB": "mysql"
