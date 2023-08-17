@@ -69,5 +69,7 @@
 
 	"containerEnv": {
 		"PLUGIN_NAME": "${localWorkspaceFolderBasename}"
-	}
+	},
+
+	"forwardPorts": [3000]
 }
