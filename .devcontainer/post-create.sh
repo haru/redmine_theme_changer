@@ -1,9 +1,11 @@
 #!/bin/sh
 cd /usr/local/redmine
 
-ln -s /workspaces/redmine_theme_changer plugins/redmine_theme_changer
-cp plugins/redmine_theme_changer/Gemfile_for_test plugins/redmine_theme_changer/Gemfile 
-cp plugins/redmine_theme_changer/test/fixtures/theme_changer_user_settings.yml test/fixtures
+PLUGIN_NAME=${RepositoryName}
+
+ln -s /workspaces/${PLUGIN_NAME} plugins/${PLUGIN_NAME}
+cp plugins/${PLUGIN_NAME}/Gemfile_for_test plugins/${PLUGIN_NAME}/Gemfile 
+cp plugins/${PLUGIN_NAME}/test/fixtures/theme_changer_user_settings.yml test/fixtures
 bundle install 
 bundle exec rake redmine:plugins:migrate
 bundle exec rake redmine:plugins:migrate RAILS_ENV=test
