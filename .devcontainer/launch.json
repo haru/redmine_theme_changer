@@ -11,6 +11,8 @@
             "script": "server",
             "useBundler": true,
             "args": [
+                "-b",
+                "0.0.0.0"
             ]
         },
         {
@@ -21,6 +23,8 @@
             "script": "server",
             "useBundler": true,
             "args": [
+                "-b",
+                "0.0.0.0"
             ],
             "env":{
                 "DB": "postgres"
@@ -34,6 +38,8 @@
             "script": "server",
             "useBundler": true,
             "args": [
+                "-b",
+                "0.0.0.0"
             ],
             "env":{
                 "DB": "mysql"
@@ -46,6 +52,7 @@
             "command": "${workspaceRoot}/bin/rake",
             "script": "redmine:plugins:test",
             "useBundler": true,
+            "cwd": "${workspaceRoot}",
             "args": [
                 "redmine:plugins:test"
             ],
@@ -58,7 +65,9 @@
             "type": "rdbg",
             "request": "launch",
             "command": "${workspaceRoot}/bin/rake",
+            "script": "redmine:plugins:test",
             "useBundler": true,
+            "cwd": "${workspaceRoot}",
             "args": [
                 "redmine:plugins:test"
             ],
@@ -72,7 +81,9 @@
             "type": "rdbg",
             "request": "launch",
             "command": "${workspaceRoot}/bin/rake",
+            "script": "redmine:plugins:test",
             "useBundler": true,
+            "cwd": "${workspaceRoot}",
             "args": [
                 "redmine:plugins:test"
             ],

@@ -6,7 +6,10 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	
-	// "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/.devcontainer/redmine.code-workspace",
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind"
+	],
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	// "workspaceFolder": "/workspaces/dev.code-workspace",
     
 	// Set *default* container specific settings.json values on container create.
@@ -62,7 +65,11 @@
 	"remoteUser": "vscode",
 	"features": {
 		// "git": "latest"
-	}
+	},
 
-	
+	"containerEnv": {
+		"PLUGIN_NAME": "${localWorkspaceFolderBasename}"
+	},
+
+	"forwardPorts": [3000]
 }

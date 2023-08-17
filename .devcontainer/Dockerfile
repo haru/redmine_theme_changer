@@ -42,6 +42,7 @@ RUN bundle exec rake db:migrate
 RUN bundle exec rake db:migrate RAILS_ENV=test
 COPY .devcontainer/launch.json /usr/local/redmine/.vscode/launch.json
 RUN chown -R vscode .
+RUN sed -i "s/^end/  config.hosts.clear\nend/" config/environments/development.rb 
 
 COPY .devcontainer/post-create.sh /post-create.sh
 
