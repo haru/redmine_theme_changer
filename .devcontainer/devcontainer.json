@@ -52,7 +52,8 @@
 		"donjayamanne.git-extension-pack",
 		"ms-azuretools.vscode-docker",
 		"KoichiSasada.vscode-rdbg",
-		"Serhioromano.vscode-gitflow"
+		"Serhioromano.vscode-gitflow",
+		"github.vscode-github-actions"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
