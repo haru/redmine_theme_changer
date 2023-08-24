@@ -30,6 +30,7 @@ WORKDIR /usr/local
 ARG REDMINE_VERSION=master
 RUN git clone https://github.com/redmine/redmine.git -b ${REDMINE_VERSION}
 WORKDIR /usr/local/redmine
+RUN chown -R vscode .
 COPY .devcontainer/database.yml /usr/local/redmine/config/database.yml
 
 RUN rm -rf .git
@@ -37,11 +38,13 @@ RUN rm -rf .git
 RUN echo "gem 'debug'" >> Gemfile
 RUN echo "gem 'rufo'" >> Gemfile
 ENV DB=sqlite3
+USER vscode
 RUN bundle install
 RUN bundle exec rake db:migrate
 RUN bundle exec rake db:migrate RAILS_ENV=test
 COPY .devcontainer/launch.json /usr/local/redmine/.vscode/launch.json
-RUN chown -R vscode .
+USER root
+
 RUN sed -i "s/^end/  config.hosts.clear\nend/" config/environments/development.rb 
 
 COPY .devcontainer/post-create.sh /post-create.sh
