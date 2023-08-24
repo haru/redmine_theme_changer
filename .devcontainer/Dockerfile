@@ -42,7 +42,8 @@ USER vscode
 RUN bundle install
 RUN bundle exec rake db:migrate
 RUN bundle exec rake db:migrate RAILS_ENV=test
-COPY .devcontainer/launch.json /usr/local/redmine/.vscode/launch.json
+RUN mkdir -p .vscode
+
 USER root
 
 RUN sed -i "s/^end/  config.hosts.clear\nend/" config/environments/development.rb 
