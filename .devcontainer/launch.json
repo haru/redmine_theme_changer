@@ -54,7 +54,6 @@
             "useBundler": true,
             "cwd": "${workspaceRoot}",
             "args": [
-                "redmine:plugins:test"
             ],
             "env":{
                 "RAILS_ENV": "test"
@@ -69,7 +68,6 @@
             "useBundler": true,
             "cwd": "${workspaceRoot}",
             "args": [
-                "redmine:plugins:test"
             ],
             "env":{
                 "RAILS_ENV": "test",
@@ -85,7 +83,6 @@
             "useBundler": true,
             "cwd": "${workspaceRoot}",
             "args": [
-                "redmine:plugins:test"
             ],
             "env":{
                 "RAILS_ENV": "test",
