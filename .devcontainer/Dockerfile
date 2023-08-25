@@ -46,7 +46,7 @@ RUN mkdir -p .vscode
 
 USER root
 
-RUN sed -i "s/^end/  config.hosts.clear\nend/" config/environments/development.rb 
+RUN sed -i "s/^end/  config.hosts.clear if config.respond_to?(:hosts)\nend/" config/environments/development.rb 
 
 COPY .devcontainer/post-create.sh /post-create.sh
 
