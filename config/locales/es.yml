@@ -1,0 +1,4 @@
+# Spanish strings go here for Rails i18n
+# Translation VSC55 https://github.com/vsc55
+es:
+  label_use_system_setting: "Usar configuración del sistema"
