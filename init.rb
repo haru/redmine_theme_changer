@@ -28,5 +28,5 @@ Redmine::Plugin.register :redmine_theme_changer do
   version '0.6.0'
   url 'http://www.redmine.org/plugins/redmine_theme_changer'
   author_url 'http://twitter.com/haru_iida'
-  requires_redmine :version_or_higher => '4.0.0'
+  requires_redmine :version_or_higher => '5.0.0'
 end
