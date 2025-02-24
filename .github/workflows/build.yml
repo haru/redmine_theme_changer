@@ -53,7 +53,7 @@ jobs:
         run: bash -x ./build-scripts/build.sh
       - name: Clean
         run: bash -x ./build-scripts/cleanup.sh
-      - uses: codecov/codecov-action@v3
+      - uses: codecov/codecov-action@v5
       - name: Slack Notification on Failure
         uses: rtCamp/action-slack-notify@v2.0.2
         if: failure()
