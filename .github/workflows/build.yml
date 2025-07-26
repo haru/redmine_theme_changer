@@ -67,7 +67,7 @@ jobs:
             fail_ci_if_error: true
       - name: Slack Notification on Failure
         uses: rtCamp/action-slack-notify@v2.0.2
-        if: failure() || env.SLACK_WEBHOOK != ''
+        if: failure() && env.SLACK_WEBHOOK != ''
         env:
           SLACK_CHANNEL: plugin-theme_changer
           SLACK_TITLE: Test Failure
