@@ -20,6 +20,7 @@ require 'redmine'
 require 'theme_changer_my_account_hooks'
 require 'theme_changer_user_preference_patch'
 require 'theme_changer_themes_patch'
+require 'theme_changer_application_helper_patch'
 
 Redmine::Plugin.register :redmine_theme_changer do
   name 'Redmine Theme Changer plugin'
