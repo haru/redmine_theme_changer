@@ -2,3 +2,5 @@ Gemfile
 coverage
 .DS_Store
 Gemfile.lock
+.claude/settings.local.json
+docs/
