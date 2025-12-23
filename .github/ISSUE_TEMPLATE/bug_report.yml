@@ -21,13 +21,6 @@ body:
     validations:
       required: true
   - type: input
-    id: AI-Helper-version
-    attributes:
-      label: AI Helper Version
-      description: What version of AI Helper plugin are you running?
-    validations:
-      required: true
-  - type: input
     id: Redmine-version
     attributes:
       label: Redmine Version
