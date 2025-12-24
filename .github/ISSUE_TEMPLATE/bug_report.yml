@@ -21,10 +21,10 @@ body:
     validations:
       required: true
   - type: input
-    id: AI-Helper-version
+    id: Plugin-version
     attributes:
-      label: AI Helper Version
-      description: What version of AI Helper plugin are you running?
+      label: Plugin Version
+      description: What version of this plugin are you running?
     validations:
       required: true
   - type: input
@@ -39,13 +39,6 @@ body:
     attributes:
       label: Ruby Version
       description: What version of Ruby are you running?
-    validations:
-      required: false
-  - type: textarea
-    id: settings
-    attributes:
-      label: ⚙️AI Helper Settings
-      description: Tell us, settings of this plugin(llm, model, etc.). or share your screenshot of AI Helper Settings screen.
     validations:
       required: false
   - type: dropdown
